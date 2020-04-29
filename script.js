@@ -12,7 +12,7 @@ var welcomeEl = document.getElementsByClassName("welcome");
 var choiceEl = document.querySelectorAll(".choice");
 var h1El = document.getElementsByTagName("h1");
 var titleEl = document.getElementById("title");
-var revealAnswer = document.querySelector(".results");
+var revealAnswer = document.querySelectorAll(".results");
 var userAnswer;
 var questionIndex = 0;
 
@@ -29,134 +29,93 @@ var questionSet = [['Question 1. \nPredict the output of the following JavaScrip
 'Question 9. \nWhich do-while loop will exit if x = 4 and y = 3?','A. do {} while (x=4 || y=4)','B. do {} while (x=4 && y=3)','C. do {} while (x=1 && y=4)','D. do {} while (x=1 || y=3)','C'];
 var compAnswer = questionSet[questionIndex][5];
 
-// startQuiz();
-
-
-
-// function startQuiz (){
-// //Display the question, buttons text and answer.
-//     startEl.addEventListener("click", function (event){
-//         displayQuestion();
-//         startEl.setAttribute("style","display: none");
-//         titleEl.setAttribute("style","display: none");
-//         wrapper2El.setAttribute("style","display: grid");
-//         for (i = 0; i < choiceEl.length; i++){
-//             choiceEl[i].setAttribute("style", "display: grid");
-//         }
-//         for (i = 0; i < revealAnswer.length; i++){
-//             revealAnswer[i].setAttribute("style", "display: grid");
-//         }
-//             questionEl.setAttribute("style","display: grid");
-//     });
-// }
-//monitor choices class
-// function  (){
-//     for (i = 0; i < choiceEl.length; i ++){
-//         console.log("top of for loop");
-//     }   
-// }
-
 document.addEventListener("click", function(event){
-        
+    console.log("________________");
+    console.log(event.target);
+
         if(event.target.matches("#start")){
             console.log("start working");
             startEl.setAttribute("style","display: none");
             titleEl.setAttribute("style","display: none");
-            showQuiz();
             displayQuestion();
-            // for (i = 0; i < revealAnswer.length; i++){
-            //     revealAnswer[i].setAttribute("style", "display: grid");
-            // }
-                // questionEl.setAttribute("style","display: grid");
+            showQuiz();
         }
         else if(event.target.matches("#btn1")){
-            console.log("btn1 case working");
             userAnswer = btn1El.textContent[0];
-            for (i = 0; i < choiceEl.length; i++){
-                console.log("buttons disabled");
-                choiceEl[i].disabled = true; //disable buttons
-            }
+            console.log("btn1 case working");
             if(compAnswer == userAnswer){
                 correctAns();
+                showAnsandButton();
             }
             else{
                 incorrectAns();
+                showAnsandButton();
             }
-            // revealAnswer.setAttribute("style", "display: grid");
-            answerEl.setAttribute("style", "display: grid");
-            btn5El.setAttribute("style", "display: grid");
         }
         else if(event.target.matches("#btn2")){
-            console.log("btn2 case working");
             userAnswer = btn2El.textContent[0];
-            for (i = 0; i < choiceEl.length; i++){
-                console.log("buttons disabled");
-                choiceEl[i].disabled = true; //disable buttons
-             }
-             if(compAnswer == userAnswer){
+            console.log("btn2 case working");
+            if(compAnswer == userAnswer){
                 correctAns();
+                showAnsandButton();
             }
             else{
                 incorrectAns();
+                showAnsandButton();
             }
-            // revealAnswer.setAttribute("style", "display: grid");
-            answerEl.setAttribute("style", "display: grid");
-            btn5El.setAttribute("style", "display: grid");
+            
         }
         
         else if(event.target.matches("#btn3")){
-            console.log("btn3 case working");
             userAnswer = btn3El.textContent[0];
+            console.log("btn3 case working");
             for (i = 0; i < choiceEl.length; i++){
                 console.log("buttons disabled");
                 choiceEl[i].disabled = true; //disable buttons
             }
             if(compAnswer == userAnswer){
                 correctAns();
+                showAnsandButton();
             }
             else{
                 incorrectAns();
+                showAnsandButton();
             }
-            // revealAnswer.setAttribute("style", "display: grid");
-            answerEl.setAttribute("style", "display: grid");
-            btn5El.setAttribute("style", "display: grid");
         }
         
         else if(event.target.matches("#btn4")){
-            console.log("btn4 case working");
             userAnswer = btn4El.textContent[0];
+            console.log("btn4 case working");
             for (i = 0; i < choiceEl.length; i++){
                 console.log("buttons disabled");
                 choiceEl[i].disabled = true; //disable buttons
             }
             if(compAnswer == userAnswer){
                 correctAns();
+                showAnsandButton();
             }
             else{
                 incorrectAns();
+                showAnsandButton();
             }
-            // revealAnswer.setAttribute("style", "display: grid");
-            answerEl.setAttribute("style", "display: grid");
-            btn5El.setAttribute("style", "display: grid");
         }
 
         else if(event.target.matches("#btn5")){
             console.log("btn5 case working");
-            nextQuestion();
+            hideAnsandButton();
+            displayQuestion();
         }
 });
 
 function correctAns(){
     correct++;
     console.log(correct,incorrect);
-    // revealAnswer.setAttribute("style", "display: grid");
     questionIndex++;
 }
 
 function incorrectAns(){
     incorrect++;
     console.log(correct,incorrect);
-    // revealAnswer.setAttribute("style", "display: grid");
     questionIndex++;
 }
 function showQuiz(){
@@ -164,60 +123,39 @@ function showQuiz(){
     for (i = 0; i < choiceEl.length; i++){
         choiceEl[i].setAttribute("style", "display: grid");
     }
-    for (i = 0; i < revealAnswer.length; i++){//needed?
-        revealAnswer[i].setAttribute("style", "display: grid");
-    }
+    // for (i = 0; i < revealAnswer.length; i++){
+    //     revealAnswer[i].setAttribute("style", "display: grid");
+    // }
     questionEl.setAttribute("style","display: grid");
 }
 
-function showAnsNext(){
-
+function showAnsandButton(){
+    for (i = 0; i < revealAnswer.length; i++){
+        revealAnswer[i].setAttribute("style", "display: grid");
+    }
+    answerEl.setAttribute("style", "display: grid");
+    btn5El.setAttribute("style", "display: grid");
+    answerEl.textContent = "Correct answer: " + questionSet[questionIndex][5] + "\nCorrect: " + correct + " / 9";
 }
 
-function showEndResult(){
+// function showEndResult(){
 
-}
-
-
-// for (i = 0; i < choiceEl.length; i ++){
-//     console.log("top of for loop");
-//     choiceEl[i].addEventListener("click", function (event){
-//     for (i = 0; i < choiceEl.length; i++){
-//         console.log("buttons disabled");
-//         choiceEl[i].disabled = true; //disable buttons
-//     }
-//     revealAnswer.setAttribute("style", "display: grid");
-//     answerEl.setAttribute("style", "display: grid");
-//     btn5El.setAttribute("style", "display: grid");
-//     userAnswer = event.target.textContent;
-//     console.log(compAnswer,userAnswer);
-//     if(compAnswer == userAnswer[0]){
-//         correct++;
-//         console.log(correct,incorrect);
-//         revealAnswer.setAttribute("style", "display: grid");
-//         questionIndex++;
-//         nextQuestion();
-//     }
-//     else{
-//         incorrect++;
-//         console.log(correct,incorrect);
-//         revealAnswer.setAttribute("style", "display: grid");
-//         questionIndex++;
-//         nextQuestion();
-//     }
-// });
 // }
-function nextQuestion() {
-    btn5El.setAttribute("style", "display: hidden");
-    answerEl.setAttribute("style", "display: hidden");
-    displayQuestion();
+
+function hideAnsandButton() {
+console.log("Next Question");
+
     for (i = 0; i < revealAnswer.length; i++){
         revealAnswer[i].setAttribute("style", "display: hidden");
     }
-
+    answerEl.setAttribute("style", "display: hidden");
+    btn5El.setAttribute("style", "display: hidden");
+    
+    console.log("next question finished");
 }
 
 function displayQuestion(){
+    console.log("display question");
     questionEl.textContent = questionSet[questionIndex][0];
     btn1El.textContent = questionSet[questionIndex][1];
     console.log(questionSet[questionIndex][1]);
@@ -227,7 +165,6 @@ function displayQuestion(){
     console.log(questionSet[questionIndex][3]);
     btn4El.textContent = questionSet[questionIndex][4];
     console.log(questionSet[questionIndex][4]);
-    answerEl.textContent = "Correct answer: " + questionSet[questionIndex][5] + "\nCorrect: " + correct + " / 9";
     for (i = 0; i < choiceEl.length; i++){
         console.log("buttons enabled");
         choiceEl[i].enabled = true; //enable buttons
@@ -236,14 +173,15 @@ function displayQuestion(){
 // localStorage.setItem("count", "string");
 // alert(localStorage.getItem("count"));    
     
-function setTime() {
-    var timerInterval = startTimer(function() {
-        secondsLeft--;
-        timerEl.textContent = secondsLeft + " seconds";
+// function setTime() {
+//     var timerInterval = startTimer(function() {
+//         secondsLeft--;
+//         timerEl.textContent = secondsLeft + " seconds";
 
-        if(secondsLeft === 0) {
-            //end quiz
-        }
+//         if(secondsLeft === 0) {
+//             //end quiz
+//         }
 
-    }, 6000);
-}
+//     }, 6000);
+// }
+// 

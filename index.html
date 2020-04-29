@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="menu">
+        <div>
+            <!-- position the timer in the right corner -->
+            <a href="#">View Highscores</a>
+         </div>
+         <div id="timer"></div>
+    </nav>
+    <section class="wrapper">
+        <div class="welcome">
+            <div id="title">
+                <h1>Welcome to your Web Dev Quiz</h1>
+                <p class="white-space">                    You will have one minute to complete the quiz.
+                    You must achieve a score of at least 7/9 to have a passing score.  
+                    Good Luck!
+                    <button id="start">Start</button>
+                </p>
+            </div>
+            <div class="white-space" id="question"></div>
+        </div>
+
+        <div class="wrapper2" id="choices">
+            <!-- set margins around buttons -->
+            <button class="choice" id="btn1"></button>
+            <button class="choice" id="btn2"></button>
+            <button class="choice" id="btn3"></button>
+            <button class="choice" id="btn4"></button>
+        </div>
+        <div class="results">
+            <div id="answer"></div>
+            <div><button id="btn5">Next Question</button></div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

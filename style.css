@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Encode Sans', sans-serif;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    border: 2px;
+    border-style: solid;
+    background-color: #32407B;
+    margin: auto;
+}
+
+#timer {
+    text-align: right;
+}
+
+.white-space {
+    white-space: pre;
+}
+
+.welcome {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    margin: auto;
+}
+
+#title,
+#start {
+    display: grid;
+}
+
+h1 {
+    text-align: center;
+}
+
+p{
+    position: relative;
+}
+
+#start {
+    display: grid;
+    position: absolute;
+    margin-top: 30px;
+    margin: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 300px;
+    border: 2px;
+    border-style: solid;
+    border-color: #32407B;
+    background-color: #46B5D1;
+  }
+
+.wrapper2 {
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 25% 25% 25%;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: 2px;
+    background-color: #515585;
+  }
+  
+.choice {
+    display: grid;
+}
+
+  button {
+    display: none;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #515585;
+    color: #46B5D1;
+    font-size: 1rem;/*this sets how round your corners are*/
+    /* Note for the future: cursor: pointer effect */
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out;
+                /* transform 150ms ease; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#start{
+    display: grid;
+}
+
+button:hover,
+button:focus {
+    background: #0053ba;
+    color: black;
+    border-radius: 2rem;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    /* outline-offset: -4px; */
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+#question {
+    display: grid;
+    font-size: larger;
+    margin: 40px;
+}
+
+.results {
+    display: none;
+    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    margin-top: 20px;
+}
+
+#answer {
+    display: none;
+    margin-top: 20px;
+}
+
+#btn5 {
+    display: none;
+    text-align: left;
+}

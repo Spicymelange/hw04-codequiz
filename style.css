@@ -59,7 +59,8 @@ p{
   }
 
 .wrapper2 {
-    display: none;
+    display: grid;
+    visibility: hidden;
     grid-template-columns: 1fr;
     grid-template-rows: 25% 25% 25% 25%;
     margin-left: 30px;
@@ -70,10 +71,11 @@ p{
   
 .choice {
     display: grid;
+    visibility: hidden;
 }
 
 button {
-    display: none;
+    display: grid;
     border: none;
     padding: 1rem 2rem;
     margin: 0;
@@ -112,12 +114,14 @@ button:active {
 
 #question {
     display: grid;
+    visibility: hidden;
     font-size: larger;
     margin: 40px;
 }
 
 .results {
     display: grid;
+    visibility: hidden;
     text-align: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -125,11 +129,17 @@ button:active {
 }
 
 #answer {
-    display: none;
+    display: grid;
     margin-top: 20px;
 }
 
 #btn5 {
-    display: none;
+    display: grid;
+    visibility: hidden;
     text-align: left;
+}
+
+.result-page {
+    display: grid;
+    visibility: hidden;
 }

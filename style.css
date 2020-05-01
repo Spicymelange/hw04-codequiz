@@ -14,6 +14,7 @@
 }
 
 #timer {
+    display: grid;
     text-align: right;
 }
 
@@ -142,4 +143,8 @@ button:active {
 .result-page {
     display: grid;
     visibility: hidden;
+    grid-template-columns: 1fr 1fr;
+    grid-row: auto;
+    border: inherit;
+    border-color: inherit;
 }

@@ -11,7 +11,7 @@
     <nav class="menu">
         <div>
             <!-- position the timer in the right corner -->
-            <a href="#">View Highscores</a>
+            <a href="#" id="view-scores">View Highscores</a>
          </div>
          <div id="timer"></div>
     </nav>
@@ -25,18 +25,21 @@
                     <button id="start">Start</button>
                 </p>
             </div>
-            <div class="white-space" id="question"></div>
-            <div class="white-space result-page">
-                <form class= "result-page">
-                    <label type="text" name="initials" id="initials">Your initials</label>
-                    <input type="text" class= "result-page" placeholder="Enter your initials"/>
-                    <button class= "result-page" id="submit">Save your score</button>
-                  </form>
+            <div  id="question"></div>
+            <div class="result-page">
+                <form class= "result-page" id="initial-form" >
+                    <label class="result-page" >Your initials:</label>
+                    <input type="text" class="result-page" name="initials" id="initials" placeholder="Enter your initials"/>
+                    <button class="result-page" id="submit">--Save--</button>
+                </form>
+                <div class="result-page" id="scoreboard">
+                    <h2>Past Scores:</h2>
+                    <div id="new-score"><strong>Initials | Score</strong></div>
+                  </div>
             </div>
         </div>
 
         <div class="wrapper2" id="choices">
-            <!-- set margins around buttons -->
             <button class="choice" id="btn1"></button>
             <button class="choice" id="btn2"></button>
             <button class="choice" id="btn3"></button>
